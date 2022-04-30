@@ -30,7 +30,11 @@ function init() {
         type: "input",
         name: "email",
         message: "Enter employee's email:",
-        
+        validate: function(email)
+            {
+                return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                console.log(validate('enter a valid email address'))
+            }
       },
 
       {
