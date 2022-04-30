@@ -66,3 +66,48 @@ function init() {
       },
       
     ])
+    .then((answers) => {
+        if(answers.role === "Manager") {
+          const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+          employeePrompts.push(manager);
+        } else if(answers.role === "Engineer") {
+          const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+          employeePrompts.push(engineer);
+        } else {
+          const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+          employeePrompts.push(intern);
+        }
+        menu();
+      });
+  }
+
+  function menu() {
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "option",
+        message: "Would you like to do next?",
+        choices: ['Add another Team Member', 'I dont need to add another Team Member.']
+      }
+    ])
+    .then((answers) => {
+      if(answers.option === "Add another Team Member") {
+        init();
+      } else {
+        writeHtmlFile(employeePrompts);
+      }
+    })
+  }
+  
+  function writeHtmlFile(data) {
+    fs.writeFile("./dist/index.html", generateHtml(data), function (err) {
+      if (err) {
+        throw err;
+      } else {
+        console.log("File Created!");
+      }
+    });
+  }
+  
+  init();
