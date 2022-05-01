@@ -23,7 +23,7 @@ Using Node.js, Inquirer and Jest, we developed a team profile generator. It is a
  - Inquirer.js
  - Jest
 ## Walkthrough Video
-<a href="https://drive.google.com/file/d/1kmRBCd68FT1AepQkvm7x3m5VUTEo6mhY/" target="_blank">Walkthrough</a>
+<a href="https://drive.google.com/file/d/184KswqHyfnhWVU0lKlNw3n3O2OYxJlLL/view" target="_blank">Walkthrough</a>
 
 ## License
 
