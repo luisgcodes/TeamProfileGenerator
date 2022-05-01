@@ -40,7 +40,7 @@ function init() {
       {
         type: "list",
         name: "role",
-        message: "Select Employee's role from the list below",
+        message: "Select Employee's Role",
         choices: ["Manager", "Engineer", "Intern"],
        
       },
@@ -54,14 +54,14 @@ function init() {
       {
         type: "input",
         name: "github",
-        message: "Enter Engineer's GitHub username",
+        message: "Enter GitHub username",
         when: (answers) => answers.role === 'Engineer'
       },
       {
         type: "input",
         name: "school",
         message:
-          "Enter the name of the school this Intern is currently attending",
+          "Enter name of Intern's School",
           when: (answers) => answers.role === 'Intern',
       },
       
@@ -87,7 +87,7 @@ function init() {
       {
         type: "list",
         name: "option",
-        message: "Would you like to do next?",
+        message: "Would you like to add another team member?",
         choices: ['Add another Team Member', 'I dont need to add another Team Member.']
       }
     ])
